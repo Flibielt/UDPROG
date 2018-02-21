@@ -20,35 +20,17 @@ tiszta_lehet (const char *titkos, int titkos_meret)
 
   int talalat = 0;
 
-  if(strcasestr(titkos, " hogy "))
-    talalat += 1;
+  char* szavak[9] =
+   {" hogy ", " de ", " és ", " azért ", " az ", " mert ", " ha ", " nem ", " van "};
 
-  if(strcasestr(titkos, " de "))
-    talalat += 1;
+  for(int j = 0; j < 9; j ++)
+  {
+    if(strcasestr(titkos, szavak[j]))
+      talalat += 1;
+  }
 
-  if(strcasestr(titkos, " és "))
-    talalat += 1;
-
-  if(strcasestr(titkos, " azért "))
-    talalat += 1;
-
-  if(strcasestr(titkos, " az "))
-    talalat += 1; 
-
-  if(strcasestr(titkos, " mert "))
-    talalat += 1;
-
-  if(strcasestr(titkos, " ha "))
-    talalat += 1;
-
-  if(strcasestr(titkos, " nem "))
-    talalat += 1;
-
-  if(strcasestr(titkos, " van "))
-    talalat += 1;
-
-
-  return (talalat >= 3);  
+  return (talalat >= 3); 
+ 
 
 /*
   return strcasestr (titkos, "hogy") && strcasestr (titkos, "nem")
