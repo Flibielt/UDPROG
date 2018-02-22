@@ -99,7 +99,7 @@ main (void)
 		              kulcs[1] = ji;
 		              kulcs[2] = ki;
 		              kulcs[3] = li;
-                  //kulcs[4] = mi;
+                  	      //kulcs[4] = mi;
 		              //kulcs[5] = ni;
 		              //kulcs[6] = oi;
 		              //kulcs[7] = pi;
