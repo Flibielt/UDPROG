@@ -13,10 +13,6 @@
 int
 tiszta_lehet (const char *titkos, int titkos_meret)
 {
-  // a tiszta szoveg valszeg tartalmazza a gyakori magyar szavakat
-  // illetve az átlagos szóhossz vizsgálatával csökkentjük a
-  // potenciális töréseket
-  
 
   int talalat = 0;
 
@@ -31,11 +27,6 @@ tiszta_lehet (const char *titkos, int titkos_meret)
 
   return (talalat >= 3); 
  
-
-/*
-  return strcasestr (titkos, "hogy") && strcasestr (titkos, "nem")
-    && strcasestr (titkos, "az") && strcasestr (titkos, "ha");
-*/
 }
 
 void
