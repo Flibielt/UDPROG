@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1522827079 source:/home/flibielt/Dokumentumok/lista/main.cpp
+	<iostream>
+	<lista.h>
+	<vector>
+
+1522826715 /home/flibielt/Dokumentumok/lista/include/lista.h
+
+1522830093 source:/home/flibielt/Dokumentumok/lista/src/lista.cpp
+	<iostream>
+	"lista.h"
+
