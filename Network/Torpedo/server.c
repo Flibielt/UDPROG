@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
 
 
     server1.sin_family = server2.sin_family = AF_INET;              //IPv4
-    server1.sin_addr.s_addr = server2.sin_addr.s_addr = INADDR_ANY;
+    server1.sin_addr.s_addr = server2.sin_addr.s_addr = INADDR_ANY;     //összes elérhető interface elérhető a program számára
     server1.sin_port = htons(port1);
     server2.sin_port = htons(port2);
 
@@ -131,29 +131,34 @@ int main(int argc, char* argv[])
             exit(6);
         }
 
-        //Kettes játékos küld
-        rcvsize = recv( fdc2, buffer, bytes, flags );
-        if (rcvsize < 0)
+        //A kettes már el lett küldve egyes üzenete, tehát tudja, hogy mikor lép ki,
+        //ezért ilyenkor már nem fog több üzenetet küldeni
+        if (exit != 'i')
         {
-            printf("%s: Cannot receive from the socket\n",argv[0]);
-            exit(5);
-        }
-        printf("Kettes: %s\n", buffer);
+            //Kettes játékos küld
+            rcvsize = recv( fdc2, buffer, bytes, flags );
+            if (rcvsize < 0)
+            {
+                printf("%s: Cannot receive from the socket\n",argv[0]);
+                exit(5);
+            }
+            printf("Kettes: %s\n", buffer);
 
-        if (strcmp(buffer, "exit") == 0)
-        {
-            printf("buffer: %s", buffer);
-            printf("Kilépés\n");
-            kilepes = 'i';
-        }
+            if (strcmp(buffer, "exit") == 0)
+            {
+                printf("buffer: %s", buffer);
+                printf("Kilépés\n");
+                kilepes = 'i';
+            }
 
-        bytes = strlen(buffer) + 1;
-        //Továbbítás egyes játékosnak
-        trnmsize = send(fdc1, buffer, bytes, flags);
-        if (trnmsize < 0)
-        {
-            printf("%s: Cannot send data to the client.\n",argv[0]);
-            exit(6);
+            bytes = strlen(buffer) + 1;
+            //Továbbítás egyes játékosnak
+            trnmsize = send(fdc1, buffer, bytes, flags);
+            if (trnmsize < 0)
+            {
+                printf("%s: Cannot send data to the client.\n",argv[0]);
+                exit(6);
+            }
         }
 
     }
@@ -165,3 +170,4 @@ int main(int argc, char* argv[])
 
     return 0;
 }
+
