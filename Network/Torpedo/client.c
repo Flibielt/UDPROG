@@ -55,7 +55,9 @@ int main(int argc, char* argv[])
     if (argv[2][0] == '1')
     {
         printf("Egyes\n");
-        server.sin_port = htons(port1);
+        server.sin_port = htons(port1);     //host byte order to network byte order
+            //endian Johanatan Swift - Guliver utazásai, háború a lágytojás végéért
+            //big-endian hálózaton UNIX -> NUXI
     }
     else
     {
@@ -168,6 +170,8 @@ int main(int argc, char* argv[])
 
     ///Most már szinkronban van a kettő
 
+    char ellensegesLoves = 'n';
+
     while (ellenfel.elet != 0 && sajat.elet != 0 && kilepes == 'n')
     {       
 
@@ -180,18 +184,9 @@ int main(int argc, char* argv[])
         }
         system("clear");
 
-        /*
-        if (rcvsize < 0)
-        {
-            printf("%s: Cannot receive data from the server\n", argv[0]);
-            exit(3);
-        }
-        */
-
 
         if (strcmp(buffer, "exit") == 0)
         {
-            printf("buffer: %s", buffer);
             kilepes = 'i';
             printf("Az ellenfél feladata\n");
         }
@@ -222,43 +217,36 @@ int main(int argc, char* argv[])
             x = buffer[0] - '0';
             y = buffer[1] - '0';
             ///Most már az ellenfél lövésének a koordinátái vannak az x és y-ban
-            char ellensegesLoves = loves(&sajat, x, y);
+            ellensegesLoves = loves(&sajat, x, y);
 
 
-            /*
-            kiir(&ellenfel, &sajat);
-            printf("Ellenfél élete: %d\t\t", ellenfel.elet);
-            printf("Saját élet: %d\n", sajat.elet);
-            printf("\nAdj meg egy X koordinátát [1-10]: ");
-            scanf("%d", &x);
-            printf("Adj meg egy Y koordinátát [1-10]: ");
-            scanf("%d", &y);
-            system("clear");
-            */
-            koordinataBekeres(&ellenfel, &sajat, &x, &y);
-
-            if ( x == -1 || y == -1)
+            if(sajat.elet > 0 || ellenfel.elet > 0)
             {
-                sprintf(buffer, "exit");
-                kilepes = 'i';
-            }
-            else
-            {
-                koordinataAtalakitas(&x, &y);
+                koordinataBekeres(&ellenfel, &sajat, &x, &y);
 
-                sprintf(buffer, "%d%d%c", x, y, ellensegesLoves);
-                printf("Lövés: %s\n", buffer);
-            }
+                if ( x == -1 || y == -1)
+                {
+                    sprintf(buffer, "exit");
+                    kilepes = 'i';
+                }
+                else
+                {
+                    koordinataAtalakitas(&x, &y);
+
+                    sprintf(buffer, "%d%d%c", x, y, ellensegesLoves);
+                    printf("Lövés: %s\n", buffer);
+                }
 
 
-            bytes = strlen(buffer) + 1;
+                bytes = strlen(buffer) + 1;
 
-            ///Küldés
-            trnmsize = send(fd, buffer, bytes, flags);
-            if (trnmsize < 0)
-            {
-                printf("%s: Cannot send data to the server\n", argv[0]);
-                exit(3);
+                ///Küldés
+                trnmsize = send(fd, buffer, bytes, flags);
+                if (trnmsize < 0)
+                {
+                    printf("%s: Cannot send data to the server\n", argv[0]);
+                    exit(3);
+                }
             }
 
         }
@@ -307,17 +295,6 @@ void kiir(struct jatek *g, struct jatek *s)
         printf("\n");
     }
 
-    /*
-    printf("%d ", 10);
-    for (int y = 0; y < 10; y++)
-        printf("%c ", g -> terkep[9][y]);
-
-    printf("\t\t %d ", 10);
-    for (int y = 0; y < 10; y++)
-        printf("%c ", s->terkep[9][y]);
-
-    printf("\n");
-    */
 }
 
 void terkepFelallitasa(struct jatek * s)
@@ -402,7 +379,7 @@ void hajokElhelyezese(struct jatek* g, struct jatek* s)
             x = 10 - felhasznaloiY;
             y = --felhasznaloiX;
 
-            //A játékos nem helyezet egynél több hajót egy helyre és
+            //A játékos nem helyezhet egynél több hajót egy helyre és
             //a hajóknak egybefüggőknek kell lenniük
 
             if(x < 0 || x > 9 || y < 0 || y > 9)
@@ -501,3 +478,4 @@ void koordinataBekeres(struct jatek *g, struct jatek *s, int *x, int *y)
     }
 
 }
+
