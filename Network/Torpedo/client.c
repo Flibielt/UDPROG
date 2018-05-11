@@ -56,8 +56,6 @@ int main(int argc, char* argv[])
     {
         printf("Egyes\n");
         server.sin_port = htons(port1);     //host byte order to network byte order
-            //endian Johanatan Swift - Guliver utazásai, háború a lágytojás végéért
-            //big-endian hálózaton UNIX -> NUXI
     }
     else
     {
