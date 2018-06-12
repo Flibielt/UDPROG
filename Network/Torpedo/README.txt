@@ -1,4 +1,4 @@
-This is a simple terminal based terminal based torpedo game, which use the TCP protocol.
+This is a simple terminal based terminal torpedo game, which use the TCP protocol.
 The server should be compiled with gcc as well as the client without any arguments.
 By running the server needs no arguments, but the client need 2. The first is the IP adress of the server and the second is the player number (1 or 2).
 
