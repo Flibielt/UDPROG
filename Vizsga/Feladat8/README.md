@@ -6,7 +6,7 @@ Valamint telepíteni kell a libpng könyvtárat:<br>
 <code>sudo apt-get install libpng-dev</code></p>
 
 <p>Elsőnek készíts el egy mandelbrot halmazt:<br>
-<code>g++ mandelpng.cpp \`libpng-config --ldflags\` -o mandelpng</code><br>
+<code>g++ mandelpng.cpp `libpng-config --ldflags` -o mandelpng</code><br>
 <code>./mandelpng fájlnév</code><br>
 Ezután jöhet a lényeg:<br>
 <code>g++ mlp.hpp main.cpp -o perc -lpng -std=c++11</code><br>
