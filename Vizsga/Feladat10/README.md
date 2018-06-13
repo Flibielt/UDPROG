@@ -3,11 +3,11 @@
 Bátfai fénykardjából a feladathoz szükséges részek. A teljes fénykardja:<br>
 https://github.com/nbatfai/future/blob/master/cs/F9F2/fenykard.cpp</p>
 
-<p>A feladathoz szükséges a Boost könyvtár:
+<p>A feladathoz szükséges a Boost könyvtár:<br>
 <code>sudo apt-get install libboost-all-dev</code></p>
 
-<p>A fénykard használata:
-<code>g++ fenykard.cpp -o fenykard -lboost_system -lboost_filesystem -lboost_program_options -std=c++14</code
+<p>A fénykard használata:<br>
+<code>g++ fenykard.cpp -o fenykard -lboost_system -lboost_filesystem -lboost_program_options -std=c++14</code><br>
 <code>./fenykard adatbázisfájl</code></p>
 
 ### Főtéma:
