@@ -3,6 +3,8 @@ A második védési program képet adjon vissza és azt mentsd ki a fájlrendsze
 
 A működéshez szükséges a png++ könyvtár:
 http://download.savannah.nongnu.org/releases/pngpp/
+Valamint telepíteni kell a libpng könyvtárat:
+    sudo apt-get install libpng-dev
 
 Elsőnek készíts el egy mandelbrot halmazt:
     g++ mandelpng.cpp `libpng-config --ldflags` -o mandelpng
