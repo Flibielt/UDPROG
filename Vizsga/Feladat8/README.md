@@ -6,11 +6,11 @@ Valamint telepíteni kell a libpng könyvtárat:<br>
 <code>sudo apt-get install libpng-dev</code><br>
 
 Elsőnek készíts el egy mandelbrot halmazt:</p>
-<code>g++ mandelpng.cpp \`libpng-config --ldflags\` -o mandelpng</code>
+<code>g++ mandelpng.cpp \`libpng-config --ldflags\` -o mandelpng</code><br>
 <code>./mandelpng fájlnév</code>
 <p>Ezután jöhet a lényeg:<br>
 <code>g++ mlp.hpp main.cpp -o perc -lpng -std=c++11</code><br>
-<code>./perc kép fájlnév</code><br>
+<code>./perc kép</code><br>
 Lehet, hogy rosszul értelmeztem a feladatot és akkor valami olyasmi kell, mint a png.c<br>
 <code>gcc png.c -o png -lpng</code><br>
 <code>./png</code></p><br>
