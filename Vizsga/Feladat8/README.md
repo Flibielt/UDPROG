@@ -10,7 +10,7 @@ Valamint telepíteni kell a libpng könyvtárat:<br>
 <code>./mandelpng fájlnév</code><br>
 Ezután jöhet a lényeg:<br>
 <code>g++ mlp.hpp main.cpp -o perc -lpng -std=c++11</code><br>
-<code>./perc kép</code><br>
-Lehet, hogy rosszul értelmeztem a feladatot és akkor valami olyasmi kell, mint a png.c<br>
+<code>./perc kép</code><br></p>
+<p>Lehet, hogy rosszul értelmeztem a feladatot és akkor valami olyasmi kell, mint a png.c<br>
 <code>gcc png.c -o png -lpng</code><br>
 <code>./png</code></p><br>
