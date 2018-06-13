@@ -3,12 +3,12 @@
 A működéshez szükséges a png++ könyvtár:<br>
 http://download.savannah.nongnu.org/releases/pngpp/<br>
 Valamint telepíteni kell a libpng könyvtárat:<br>
-<code>sudo apt-get install libpng-dev</code><br>
+<code>sudo apt-get install libpng-dev</code></p>
 
-Elsőnek készíts el egy mandelbrot halmazt:</p>
+<p>Elsőnek készíts el egy mandelbrot halmazt:<br>
 <code>g++ mandelpng.cpp \`libpng-config --ldflags\` -o mandelpng</code><br>
-<code>./mandelpng fájlnév</code>
-<p>Ezután jöhet a lényeg:<br>
+<code>./mandelpng fájlnév</code><br>
+Ezután jöhet a lényeg:<br>
 <code>g++ mlp.hpp main.cpp -o perc -lpng -std=c++11</code><br>
 <code>./perc kép</code><br>
 Lehet, hogy rosszul értelmeztem a feladatot és akkor valami olyasmi kell, mint a png.c<br>
