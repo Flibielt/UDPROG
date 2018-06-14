@@ -14,3 +14,9 @@ Ezután jöhet a lényeg:<br>
 <p>Lehet, hogy rosszul értelmeztem a feladatot és akkor valami olyasmi kell, mint a png.c<br>
 <code>gcc png.c -o png -lpng</code><br>
 <code>./png</code></p><br>
+
+### Főtéma:
+<p>Az első védési program kimenő állományának a kezelése.<br>
+  <code>g++ z3a9.cpp -o binfa -std=c++11</code><br>
+  <code>./binfa</code></p>
+
