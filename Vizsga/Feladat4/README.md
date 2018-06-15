@@ -16,7 +16,7 @@
 </p>
 
 <p>
-  A feladatban használt Boost-os dolgokhoz:
+  A feladatban használt Boost-os dolgokhoz:<br>
   https://theboostcpplibraries.com/boost.filesystem
 </p>
 
