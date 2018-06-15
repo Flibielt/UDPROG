@@ -15,3 +15,8 @@
   <code>./fabejar</code>
 </p>
 
+<p>
+  A feladatban használt Boost-os dolgokhoz:
+  https://theboostcpplibraries.com/boost.filesystem
+</p>
+
