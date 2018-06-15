@@ -2,7 +2,8 @@
 #include <string>
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/fstream.hpp>
-//https://theboostcpplibraries.com/boost.filesystem-iterators
+//g++ faBejaras.cpp -lboost_filesystem -lboost_system -o fabejar -std=c++11
+//./fabejar
 
 
 int pontokBegyujtese(boost::filesystem::path file)
