@@ -1,0 +1,6 @@
+Ennek a fajlnak a tartalma:
+Szam: 6
+Betu: 48
+Szokoz: 9
+Sor: 6
+Specialis: 6
