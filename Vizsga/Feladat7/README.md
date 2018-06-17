@@ -3,3 +3,8 @@
 <code>g++ z3a9.cpp -o binfa -std=c++11</code><br>
 <code>./binfa</code></p>
 
+### Főtéma:
+<p>
+  A főtéma is ugyanez.
+</p>
+
