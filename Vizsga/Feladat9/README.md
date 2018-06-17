@@ -5,7 +5,7 @@ A feladathoz szükséges a Boost könyvtár:<br>
 </p>
 
 <p>A fénykard használata:<br>
-<code>g++ faBejaras.cpp -lboost_filesystem -lboost_system -o fabejar -std=c++11</code><br>
+<code>g++ fenykard.cpp -o fenykard -lboost_system -lboost_filesystem -lboost_program_options -std=c++14</code><br>
 <code>./fabejar adatbázis</code>
 </p>
 
