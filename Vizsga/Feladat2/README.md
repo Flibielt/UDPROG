@@ -7,5 +7,5 @@
 ### Főtéma:
 <p>Saját lexer-el számolni a bemeneten a szavakat.<br>
 <code>g++ lex.cpp -o lex</code><br>
-<code>./lex</code>
+<code>./lex uzenet.txt</code>
 </p>
