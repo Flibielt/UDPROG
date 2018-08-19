@@ -1,4 +1,2 @@
 # UDPROG
-Programozási feladatok
-
-Programming excersises
+A Debreceni egyetem Informatikai Karának programtervező informatikus szakjának a gyakrolati feladatai.
