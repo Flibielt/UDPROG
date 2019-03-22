@@ -1,0 +1,43 @@
+html, body, div.columns {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+div.columns {
+    display: flex;
+    & > div {     
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+    }
+}
+
+@color: plum;
+@lighter1: lighten(spin(@color, 5), 10%);
+@lighter2: lighten(spin(@color, 10), 20%);
+@darker1: darken(spin(@color, -5), 10%);
+@darker2: darken(spin(@color, -10), 20%);
+
+#c1 {
+    background-color: @lighter2;
+}
+
+#c2 {
+    background-color: @lighter1;
+}
+
+#c3 {
+    background-color: @color;
+}
+
+#c4 {
+    background-color: @darker1;
+}
+
+#c5 {
+    background-color: @darker2;
+}
